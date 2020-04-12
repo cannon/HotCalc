@@ -6,36 +6,28 @@ setInterval(function () {
 		var input = inputs[i];
 
 		if (input.type == "text") {
-			if (input.SwappedOriginal || input.SwappedReplacement) {
-				continue;
-			}
 			// All for TurboTax: Find elements with auto-validation, and clone them and make the original invisible. Their scripts still point to the original.
 			//if (input.getAttribute("data-format") || input.getAttribute("data-validate")) {
-			var replacement = input.cloneNode(true);
-			replacement.removeAttribute("id");
-			replacement.removeAttribute("name");
-			replacement.removeAttribute("data-format");
-			replacement.removeAttribute("data-validate");
-			replacement.SwappedOriginal = input;
-			input.SwappedReplacement = replacement;
-			//input.style.display = "none";
-			input.style.position = "absolute";
-			input.style.opacity = "0.0";
-			input.style.zIndex = "-10000";
-			if (input.nextSibling) {
-				input.parentNode.insertBefore(replacement, input.nextSibling);
-			} else {
-				input.parentNode.appendChild(replacement);
+			if (!(input.SwappedOriginal) && !(input.SwappedReplacement)) {
+				var replacement = input.cloneNode(true);
+				replacement.removeAttribute("id");
+				replacement.removeAttribute("name");
+				replacement.removeAttribute("data-format");
+				replacement.removeAttribute("data-validate");
+				replacement.SwappedOriginal = input;
+				input.SwappedReplacement = replacement;
+				//input.style.display = "none";
+				input.style.position = "absolute";
+				input.style.opacity = "0.0";
+				input.style.zIndex = "-10000";
+				if (input.nextSibling) {
+					input.parentNode.insertBefore(replacement, input.nextSibling);
+				} else {
+					input.parentNode.appendChild(replacement);
+				}
+				//}
 			}
-			//}
-		}
-	}
 
-	inputs = document.getElementsByTagName("input");
-	for (var i = 0; i < inputs.length; i++) {
-		var input = inputs[i];
-
-		if (input.type == "text") {
 			if (input.SwappedReplacement) {
 				// If you tab to the invisible original, switch to the replacement
 				if (document.activeElement == input) {
@@ -43,6 +35,7 @@ setInterval(function () {
 				}
 				continue;
 			}
+
 			if (input.SwappedOriginal) {
 				// If the invisible original moved/was deleted, delete the replacement
 				if (input.SwappedOriginal.parentNode != input.parentNode) {
@@ -85,6 +78,6 @@ setInterval(function () {
 			}
 		}
 	}
-}, 100);
+}, 200);
 
 
