@@ -1,4 +1,7 @@
 # HotCalc
+
+![alt text](https://i.imgur.com/19NxR7E.png "screenshot")
+
 Chrome extension to automatically solve math expressions typed into text fields. Works with TurboTax.
 
 I came up with idea this while doing taxes - I kept having to calculate things like "$1324 per month times 12 months" using the windows calculator and thought "Wouldn't it be nice to just type `=1324*12` right into TurboTax and have the solution put itself there?"
