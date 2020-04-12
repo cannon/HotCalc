@@ -5,6 +5,8 @@ I came up with idea this while doing taxes - I kept having to calculate things l
 
 So how this extension works is you type something like `=(6+3)*5` (note the equals sign as the first character) into a text field and when you tab to the next one or click out, the solution to that will automatically replace the content of the text field. The code to do that in a regular webpage is trivial, but it took me a good 2 hours to make it work with TurboTax because of all their new-age responsiveness voodoo.
 
+**DISCLAIMER: USE THIS EXTENSION AT YOUR OWN RISK; I AM NOT RESPONSIBLE FOR ANY LOSSES/DAMAGES DUE TO ERRORS THAT THIS EXTENSION CAUSES. THE WAY IT WORKS AROUND TURBOTAX AUTOCORRECT IS HACKY AND I SUSPECT IT WILL CAUSE TROUBLE**
+
 # Installation
 
 Download as a zip and unzip, then go into the Chrome Settings -> Extensions menu, click "load unpacked extension" (you might need to enable developer mode first), and select the folder containing these files.
