@@ -7,25 +7,25 @@ setInterval(function () {
 
 		if (input.type == "text") {
 			// All for TurboTax: Find elements with auto-validation, and clone them and make the original invisible. Their scripts still point to the original.
-			//if (input.getAttribute("data-format") || input.getAttribute("data-validate")) {
-			if (!(input.SwappedOriginal) && !(input.SwappedReplacement)) {
-				var replacement = input.cloneNode(true);
-				replacement.removeAttribute("id");
-				replacement.removeAttribute("name");
-				replacement.removeAttribute("data-format");
-				replacement.removeAttribute("data-validate");
-				replacement.SwappedOriginal = input;
-				input.SwappedReplacement = replacement;
-				//input.style.display = "none";
-				input.style.position = "absolute";
-				input.style.opacity = "0.0";
-				input.style.zIndex = "-10000";
-				if (input.nextSibling) {
-					input.parentNode.insertBefore(replacement, input.nextSibling);
-				} else {
-					input.parentNode.appendChild(replacement);
+			if (window.location.hostname.endsWith("intuit.com")) {
+				if (!(input.SwappedOriginal) && !(input.SwappedReplacement)) {
+					var replacement = input.cloneNode(true);
+					replacement.removeAttribute("id");
+					replacement.removeAttribute("name");
+					replacement.removeAttribute("data-format");
+					replacement.removeAttribute("data-validate");
+					replacement.SwappedOriginal = input;
+					input.SwappedReplacement = replacement;
+					//input.style.display = "none";
+					input.style.position = "absolute";
+					input.style.opacity = "0.0";
+					input.style.zIndex = "-10000";
+					if (input.nextSibling) {
+						input.parentNode.insertBefore(replacement, input.nextSibling);
+					} else {
+						input.parentNode.appendChild(replacement);
+					}
 				}
-				//}
 			}
 
 			if (input.SwappedReplacement) {
