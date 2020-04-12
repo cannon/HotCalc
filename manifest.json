@@ -1,0 +1,15 @@
+{
+	"manifest_version": 2,
+	"name": "HotCalc",
+	"version": "1.0",
+	"description": "Automatically solve math expressions typed into text fields.",
+	"content_scripts": 
+	[
+		{
+			"matches": ["*://*/*"],
+			"js": ["content_script.js"],
+			"run_at": "document_end"
+		}
+	]
+}
+
