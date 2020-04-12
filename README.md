@@ -8,3 +8,5 @@ So how this extension works is you type something like `=(6+3)*5` (note the equa
 # Installation
 
 Download as a zip and unzip, then go into the Chrome Settings -> Extensions menu, click "load unpacked extension" (you might need to enable developer mode first), and select the folder containing these files.
+
+Submission to the Chrome app store is pending approval.
